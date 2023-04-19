@@ -1,0 +1,26 @@
+
+:root{
+    --main:#f90;
+    --sec:black;
+    --acc:white;
+    --darkO:#663d00;
+    --lightO:#feeacc;
+}
+*{
+    font-family:  Helvetica, sans-serif
+}
+.mainc{
+    color: var(--main);
+}
+
+.navbar{
+background-color: var(--main);
+}
+.Groove{
+    color: var(--primary);
+
+}
+.hub{
+    color: var(--acc);
+    background-color: var(--main);
+}
