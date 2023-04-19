@@ -12,7 +12,13 @@
 .mainc{
     color: var(--main);
 }
+.back{
+    background-color: black;
 
+}
+/* a:link{
+    color: white;
+} */
 .navbar{
 background-color: var(--main);
 }
@@ -21,6 +27,9 @@ background-color: var(--main);
 
 }
 .hub{
-    color: var(--acc);
+    color: var(--sec);
     background-color: var(--main);
+}
+.iconN{
+background-color: var(--main);
 }
