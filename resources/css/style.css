@@ -16,11 +16,9 @@
     background-color: black;
 
 }
-/* a:link{
-    color: white;
-} */
+
 .navbar{
-background-color: var(--main);
+background-color: rgba(255, 153, 0, 0.47);
 }
 .Groove{
     color: var(--primary);
