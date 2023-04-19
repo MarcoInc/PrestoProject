@@ -24,3 +24,10 @@ background-color: var(--main);
     color: var(--acc);
     background-color: var(--main);
 }
+body{
+    background-color: var(--sec);
+}
+.carousel-item > img {
+    height: 100vh;
+    /* width: 30vw; */
+}
