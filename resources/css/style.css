@@ -52,3 +52,13 @@ body{
 .shadowImg{
     box-shadow: 1vw 1vh 15px rgba(0, 0, 0, 0.653);
 }
+
+.backgroundstats{
+    background-image: url(/resources/img/cover-12.jpg);
+    height: 80vh;
+    
+    background-size: contain;
+    background-repeat:no-repeat;
+    border: 0%;
+
+}
