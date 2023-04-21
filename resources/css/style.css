@@ -34,7 +34,7 @@
 /*logo*/
 .hub{
     color: var(--sec);
-    background-color: var(--darkO);
+    background-color: var(--main);
 }
 .Groove{
     color: var(--primary);
