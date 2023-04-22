@@ -55,10 +55,20 @@ body{
 
 .backgroundstats{
     background-image: url(/resources/img/cover-12.jpg);
-    height: 80vh;
-    
-    background-size: contain;
+    height: 70vh;
+    width: 100vw;
+    background-size: cover;
     background-repeat:no-repeat;
     border: 0%;
 
+}
+.numbers{
+  margin: 25px;
+  width: 350px;
+  height: 400px;
+}
+h2{
+    font-size: 4rem;
+    color: var(--acc);
+    font-weight: bold;
 }
