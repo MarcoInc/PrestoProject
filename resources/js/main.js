@@ -20,23 +20,21 @@ function interval(element, finalnumber, frame) {
         counter++;
         element.innerHTML = counter;
       } else {
-        clearInterval();
+        clearInterval(interval);
       }
     }, frame);
 }
 
-    interval(firstnumber, 1000, 1);
-    interval(secondnumber, 5000, 1);
-    interval(thirdnumber, 7000, 1);
 // intersection observer
-// let observer = new IntersectionObserver ((entries) => {
-//     entries.forEach(entry =>{
-//         if (entry.isIntersecting) {
-//             interval(firstnumber, 1000, 1);
-//             interval(secondnumber, 5000, 1);
-//             interval(thirdnumber, 7000, 1);
-//         }
-//     })
-// })
+let observer = new IntersectionObserver ((entries) => {
+    entries.forEach(entry =>{
+        if (entry.isIntersecting) {
+            interval(firstnumber, 1000, 20);
+            interval(secondnumber, 5000, 50);
+            interval(thirdnumber, 7000, 100);
+        }
+    })
+})
+observer.observe(firstnumber)
 
 

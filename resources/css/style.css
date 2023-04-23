@@ -20,11 +20,17 @@
     z-index: 999;
 }
 /*carousel*/
-.carousel-item > img {
+.carousel-item > div> img {
     height: 100vh;
     width: 100vw; 
+    transition: transform .2s; /* Animation */
+}
+
+.carousel-item > div> img:hover{
+transform: scale(1.1);
 
 }
+
 /* .carousel-inner img {
     object-fit: contain !important;
 } */
@@ -66,9 +72,14 @@ body{
   margin: 25px;
   width: 350px;
   height: 400px;
+
 }
 h2{
     font-size: 4rem;
     color: var(--acc);
     font-weight: bold;
+
+}
+#firstnumber, #secondnumber, #thirdnumber{
+    background-color: #f90;
 }
