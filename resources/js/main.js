@@ -12,9 +12,9 @@ let firstnumber = document.querySelector ('#firstnumber')
 let secondnumber = document.querySelector("#secondnumber");
 let thirdnumber = document.querySelector("#thirdnumber");
 
-let counter = 0;
 
 function interval(element, finalnumber, frame) {
+    let counter = 0; //va messo dentro altrimenti il contatore è unico per tutti
     let interval = setInterval(() => {
       if (counter < finalnumber) {
         counter++;

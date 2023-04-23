@@ -41,6 +41,7 @@ transform: scale(1.1);
 .hub{
     color: var(--sec);
     background-color: var(--main);
+    border-radius: 10%;
 }
 .Groove{
     color: var(--primary);
@@ -72,7 +73,6 @@ body{
   margin: 25px;
   width: 350px;
   height: 400px;
-
 }
 h2{
     font-size: 4rem;
