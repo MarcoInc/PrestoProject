@@ -7,10 +7,25 @@
     --darkO:#663d00;
     --lightO:#feeacc;
 }
-*{
-    font-family:  Helvetica, sans-serif
-}
 
+*{
+    font-family: 'Inter Tight', sans-serif;
+
+}
+span,h1,h2,h3,h4,h5,h6{
+    font-family: 'Orbitron', sans-serif;
+}
+h1{
+    font-size: 100vh;
+    font-size: 10vw;
+    font-weight: bold;
+    color: var(--acc);
+    
+}
+span{
+    font-weight: lighter;
+}
+/*  */
 .navbar-custom{
     position: fixed;
     top: 1%;
@@ -54,7 +69,7 @@ transform: scale(1.1);
 
 
 body{
-    background-color: var(--main);
+    background-color: var(--sec);
 }
 .shadowImg{
     box-shadow: 1vw 1vh 15px rgba(0, 0, 0, 0.653);
