@@ -13,10 +13,10 @@ let secondnumber = document.querySelector("#secondnumber");
 let thirdnumber = document.querySelector("#thirdnumber");
 
 
-function interval(element, finalnumber, frame) {
+function interval(element, final, frame) {
     let counter = 0; //va messo dentro altrimenti il contatore è unico per tutti
     let interval = setInterval(() => {
-      if (counter < finalnumber) {
+      if (counter < final) {
         counter++;
         element.innerHTML = counter;
       } else {
@@ -28,10 +28,11 @@ function interval(element, finalnumber, frame) {
 // intersection observer
 let observer = new IntersectionObserver ((entries) => {
     entries.forEach(entry =>{
-        if (entry.isIntersecting) {
-            interval(firstnumber, 10000, 500);
-            interval(secondnumber, 10000, 90);
-            interval(thirdnumber, 10000, 1000); //1000 -> 1 secondo
+        if (entry.isIntersecting ) {
+            interval(firstnumber, 500, 5);
+            interval(secondnumber, 200, 7);
+            interval(thirdnumber, 1000, 1); //1000 -> 1 secondo
+            ;
         }
     })
 })
