@@ -77,7 +77,7 @@ body{
 
 .backgroundstats{
     /* background-image: url(/resources/img/cover\ 25_sfondo.jpg); */
-    background: linear-gradient(rgb(0, 0, 0), rgba(10, 10, 10, 0.336), rgb(0, 0, 0)), url(/resources/img/cover\ 24_sfondo.jpg);
+    background: linear-gradient(rgb(0, 0, 0), rgba(10, 10, 10, 0.336), rgb(0, 0, 0)), url(/resources/img/cover-28_sfondo.jpg);
     /* height: 70vh; */
     width: 100vw;
     background-size: cover;
