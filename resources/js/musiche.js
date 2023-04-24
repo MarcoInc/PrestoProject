@@ -9,9 +9,9 @@ fetch('../obj/musica.json')
   let radioAnno=document.querySelector('#radioAnno');
 
 
-
+  //genera radio button con generi univoci
   function setGenere(){
-    let generi=[];
+    let generi=[]; //generi univoci
 
     //popolo l'array di generi unici
     data.forEach(element => {
@@ -20,7 +20,9 @@ fetch('../obj/musica.json')
       }
     });
 
-    //conta quanti ce ne stanno per ogni categoria
+    generi.sort((a, b) => a.localeCompare(b)); //ordina i generi per ordine alfabetico
+
+    //conta quanti ce ne stanno per ogni genere
     generi.forEach(genere=>{
       let count=0;
       data.forEach(element => {
@@ -29,8 +31,8 @@ fetch('../obj/musica.json')
         }
       });
       
+      //popolo il contenitore Genere
       let div=document.createElement('div');
-
       div.classList.add('form-check');
       div.innerHTML=` 
         <div class="form-check">
@@ -43,10 +45,11 @@ fetch('../obj/musica.json')
       radioGenere.appendChild(div);
     })
   }
-  setGenere();
+  setGenere(); //eseguo la funzione precedente
 
+  //genera radio button con artisti univoci
   function setArtista(){
-    let artisti=[];
+    let artisti=[]; //artisti univoci
 
     //popolo l'array di generi unici
     data.forEach(element => {
@@ -54,6 +57,8 @@ fetch('../obj/musica.json')
         artisti.push(element.artist)
       }
     });
+
+    artisti.sort((a, b) => a.localeCompare(b)); //ordina gli artisti per ordine alfabetico
 
     //conta quanti ce ne stanno per ogni categoria
     artisti.forEach(artista=>{
@@ -64,8 +69,8 @@ fetch('../obj/musica.json')
         }
       });
       
+      //popolo il contenitore Artista
       let div=document.createElement('div');
-
       div.classList.add('form-check');
       div.innerHTML=` 
         <div class="form-check">
@@ -78,10 +83,11 @@ fetch('../obj/musica.json')
       radioArtista.appendChild(div);
     })
   }
-  setArtista();
+  setArtista(); //eseguo la funzione precedente
 
+  //genera radio button con anni univoci
   function setAnno(){
-    let anni=[];
+    let anni=[]; //anni univoci
 
     //popolo l'array di generi unici
     data.forEach(element => {
@@ -89,6 +95,8 @@ fetch('../obj/musica.json')
         anni.push(element.year)
       }
     });
+
+    anni.sort((a,b) => b-a); //ordine scescente
 
     //conta quanti ce ne stanno per ogni categoria
     anni.forEach(anno=>{
@@ -99,8 +107,8 @@ fetch('../obj/musica.json')
         }
       });
       
+      //popolo il contenitore Anno
       let div=document.createElement('div');
-
       div.classList.add('form-check');
       div.innerHTML=` 
         <div class="form-check">
@@ -113,7 +121,7 @@ fetch('../obj/musica.json')
       radioAnno.appendChild(div);
     })
   }
-  setAnno();
+  setAnno(); //eseguo la funzione precedente
 
 
 
