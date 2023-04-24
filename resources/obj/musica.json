@@ -1,10 +1,12 @@
-[{"id":1,"title":"Ferd","artist":"Wauchope","genre":"fwauchope0@flickr.com","url":"Male","cover":"140.73.246.106"},
-{"id":2,"title":"Sherlock","artist":"Zecchini","genre":"szecchini1@spiegel.de","url":"Male","cover":"22.112.208.183"},
-{"id":3,"title":"Anica","artist":"Virgin","genre":"avirgin2@prnewswire.com","url":"Female","cover":"26.149.53.191"},
-{"id":4,"title":"Alexio","artist":"Farnorth","genre":"afarnorth3@wufoo.com","url":"Male","cover":"31.96.249.28"},
-{"id":5,"title":"Krista","artist":"Curro","genre":"kcurro4@digg.com","url":"Female","cover":"242.92.244.24"},
-{"id":6,"title":"Ignatius","artist":"McQuie","genre":"imcquie5@tmall.com","url":"Male","cover":"132.50.104.163"},
-{"id":7,"title":"Carmella","artist":"Aucock","genre":"caucock6@ca.gov","url":"Female","cover":"72.194.126.194"},
-{"id":8,"title":"Dermot","artist":"Harryman","genre":"dharryman7@zdnet.com","url":"Male","cover":"8.43.210.184"},
-{"id":9,"title":"Bev","artist":"Tomaschke","genre":"btomaschke8@vkontakte.ru","url":"Female","cover":"123.147.89.129"},
-{"id":10,"title":"Guntar","artist":"Filtness","genre":"gfiltness9@cocolog-nifty.com","url":"Male","cover":"21.157.39.9"}]
+[
+{"id":1,"year":2000 ,"title":"Ferd","artist":"McQuie","genre":"Classic","price":0.99 ,"url":"../audio/track-01.mp3","cover":"../img/cover-13.jpg"},
+{"id":2,"year":1999 ,"title":"Sherlock","artist":"Wauchope","genre":"Rock","price":1.59 ,"url":"../audio/track-02.mp3","cover":"../img/cover-14.jpg"},
+{"id":3,"year":1995 ,"title":"Anica","artist":"Virgin","genre":"Techno","price":1.69 ,"url":"../audio/track-03.mp3","cover":"../img/cover-15.jpg"},
+{"id":4,"year":1985 ,"title":"Alexio","artist":"Tomaschke","genre":"OST","price":1.99 ,"url":"../audio/track-04.mp3","cover":"../img/cover-16.jpg"},
+{"id":5,"year":1995 ,"title":"Krista","artist":"Aucock","genre":"OST","price":0.49 ,"url":"../audio/track-05.mp3","cover":"../img/cover-17.jpg"},
+{"id":6,"year":1985 ,"title":"Ignatius","artist":"McQuie","genre":"Classic","price":1.29 ,"url":"../audio/track-06.mp3","cover":"../img/cover-18.jpg"},
+{"id":7,"year":1985 ,"title":"Carmella","artist":"Aucock","genre":"Techno","price":1.34 ,"url":"../audio/track-07.mp3","cover":"../img/cover-19.jpg"},
+{"id":8,"year":2000 ,"title":"Dermot","artist":"Wauchope","genre":"Hip Hop","price":1.09 ,"url":"../audio/track-08.mp3","cover":"../img/cover-20.jpg"},
+{"id":9,"year":2000 ,"title":"Bev","artist":"Tomaschke","genre":"Hip Hop","price":1.95 ,"url":"../audio/track-09.mp3","cover":"../img/cover-21.jpg"},
+{"id":10,"year":1999 ,"title":"Guntar","artist":"Virgin","genre":"Rock","price":1.74 ,"url":"../audio/track-10.mp3","cover":"../img/cover-22.jpg"}
+]
