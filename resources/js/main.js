@@ -29,9 +29,9 @@ function interval(element, finalnumber, frame) {
 let observer = new IntersectionObserver ((entries) => {
     entries.forEach(entry =>{
         if (entry.isIntersecting) {
-            interval(firstnumber, 1000, 20);
-            interval(secondnumber, 5000, 50);
-            interval(thirdnumber, 7000, 100);
+            interval(firstnumber, 10000, 500);
+            interval(secondnumber, 10000, 90);
+            interval(thirdnumber, 10000, 1000); //1000 -> 1 secondo
         }
     })
 })
