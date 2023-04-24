@@ -70,8 +70,8 @@ body{
 
 }
 .numbers{
-  margin: 25px;
-  width: 350px;
+  /* margin: 25px; */
+  /* width: 350px; */
   height: 400px;
 }
 h2{
@@ -82,4 +82,8 @@ h2{
 }
 #firstnumber, #secondnumber, #thirdnumber{
     background-color: #f90;
+}
+.stats{
+    text-align: center;
+    
 }
