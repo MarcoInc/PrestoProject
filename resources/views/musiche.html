@@ -64,22 +64,75 @@
     <div class="row mt-5 pt-5">
       <!-- FILTRI -->
       <div class="col-2"> 
-        <h5>Filtra per:</h5>
+        <h5 class="text-white">Filtra per:</h5>
+
         <!-- FILTRO CATEGORIE -->
         <div class="accordion mb-3" id="accordionExample">
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#categoria" aria-expanded="true" aria-controls="collapseOne">
-                Per categoria
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#genre" aria-expanded="true" aria-controls="collapseOne">
+                Per genere
               </button>
             </h2>
-            <div id="categoria" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                testo
+            <div id="genre" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <!-- contenitore radio genere -->
+              <div class="accordion-body" id="radioGenere"> 
+                
+                <!--Tutti i generi -->
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="genere" id="AllGenre" checked>
+                    <label class="form-check-label" for="All">Tutti i generi</label>
+                </div>
+
               </div>
             </div>
           </div>
         </div>
+
+        <!-- FILTRO ARTISTA -->
+        <div class="accordion mb-3" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#artist" aria-expanded="true" aria-controls="collapseOne">
+                Per artista
+              </button>
+            </h2>
+            <div id="artist" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body" id="radioArtista">
+
+                 <!--Tutti gli artisti -->
+                 <div class="form-check">
+                  <input class="form-check-input" type="radio" name="artista" id="AllArtist" checked>
+                    <label class="form-check-label" for="All">Tutti gli artisti</label>
+                </div>
+
+              </div>
+            </div>
+          </div>    
+        </div>
+
+        <!-- FILTRO ANNO -->
+        <div class="accordion mb-3" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#year" aria-expanded="true" aria-controls="collapseOne">
+                Per anno
+              </button>
+            </h2>
+            <div id="year" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body" id="radioAnno">
+
+                <!--Tutti gli anni -->
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="anno" id="AllYears" checked>
+                    <label class="form-check-label" for="All">Tutti gli anni</label>
+                </div>
+
+              </div>
+            </div>
+          </div>    
+        </div>
+
         <!-- FILTRO PREZZO -->
         <div class="accordion mb-3" id="accordionExample">
           <div class="accordion-item">
@@ -95,6 +148,8 @@
             </div>
           </div>    
         </div>
+
+         
         <!-- FILTRO CERCA -->
         <div class="accordion mb-3" id="accordionExample">
           <div class="accordion-item">
@@ -111,7 +166,7 @@
           </div>    
         </div>  
       </div>
-        <!-- CARS ANNUNCI -->
+        <!-- CARDS ANNUNCI -->
       <div class="col-10">
         <div class="card" style="width: 18rem;">
           <img src="/resources/img/cover-13.jpg" class="card-img-top" alt="...">
