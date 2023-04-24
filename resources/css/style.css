@@ -28,7 +28,7 @@ span{
 /*  */
 .navbar-custom{
     position: fixed;
-    top: 1%;
+    top: 0%;
     width: 100%;
     background-color: var(--blackTransp);
     backdrop-filter: blur(10px);
@@ -76,12 +76,13 @@ body{
 }
 
 .backgroundstats{
-    /* background-image: url(/resources/img/cover-12.jpg); */
-
-    width: 100vw;
+    /* background-image: url(/resources/img/cover\ 25_sfondo.jpg); */
+    background: linear-gradient(rgb(0, 0, 0), rgba(10, 10, 10, 0.336), rgb(0, 0, 0)), url(/resources/img/cover-28_sfondo.jpg);
+    /* height: 70vh; */
+    width: 98vw;
     background-size: cover;
     background-repeat:no-repeat;
-    border: 0%;
+    /* border: 0%; */
 
 }
 .numbers{
@@ -97,8 +98,4 @@ h2{
 }
 #firstnumber, #secondnumber, #thirdnumber{
     background-color: #f90;
-}
-.stats{
-    text-align: center;
-    
 }
