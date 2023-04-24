@@ -10,7 +10,7 @@
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  <link rel="stylesheet" href="/resources/css/style.css">
+  <link rel="stylesheet" href="/resources/css/musiche.css">
 </head>
 
 <body>
@@ -59,9 +59,80 @@
       </div>
     </nav>
   </header>
-  
-  </footer>
-  <!-- Bootstrap JavaScript Libraries -->
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- FILTRI -->
+      <div class="col-2"> 
+        <h5>Filtra per:</h5>
+        <!-- FILTRO CATEGORIE -->
+        <div class="accordion mb-3" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#categoria" aria-expanded="true" aria-controls="collapseOne">
+                Per categoria
+              </button>
+            </h2>
+            <div id="categoria" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                testo
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FILTRO PREZZO -->
+        <div class="accordion mb-3" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#prezzo" aria-expanded="true" aria-controls="collapseOne">
+                Per prezzo
+              </button>
+            </h2>
+            <div id="prezzo" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                testo
+              </div>
+            </div>
+          </div>    
+        </div>
+        <!-- FILTRO CERCA -->
+        <div class="accordion mb-3" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cerca" aria-expanded="true" aria-controls="collapseOne">
+                Per nome
+              </button>
+            </h2>
+            <div id="cerca" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                testo
+              </div>
+            </div>
+          </div>    
+        </div>  
+      </div>
+        <!-- CARS ANNUNCI -->
+      <div class="col-10">
+        <div class="card" style="width: 18rem;">
+          <img src="/resources/img/cover-13.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Titolo</h5>
+            <p class="card-text">Artista</p>
+            <p class="card-title">Anno</p>
+            <p class="card-title">Prezzo</p>
+            <a href="#" class="btn riproduci">play</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+   
+
+
+
+
+    <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
   integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
 </script>
@@ -69,7 +140,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
 integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
 </script>
-<script src="/resources/js/main.js"></script>
+<script src="/resources/js/musiche.js"></script>
 </body>
 
 </html>

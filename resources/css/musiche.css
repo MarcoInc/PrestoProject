@@ -19,17 +19,6 @@
     backdrop-filter: blur(10px);
     z-index: 999;
 }
-/*carousel*/
-.carousel-item > div> img {
-    height: 100vh;
-    width: 100vw; 
-    transition: transform .2s; /* Animation */
-}
-
-.carousel-item > div> img:hover{
-transform: scale(1.1);
-
-}
 
 /* .carousel-inner img {
     object-fit: contain !important;
@@ -54,32 +43,39 @@ transform: scale(1.1);
 
 
 body{
-    background-color: var(--main);
-}
-.shadowImg{
-    box-shadow: 1vw 1vh 15px rgba(0, 0, 0, 0.653);
+    background-color: black;
 }
 
-.backgroundstats{
-    background-image: url(/resources/img/cover-12.jpg);
-    height: 70vh;
-    width: 100vw;
-    background-size: cover;
-    background-repeat:no-repeat;
-    border: 0%;
 
+/*ACCORDION*/
+/* Accordion CHIUSA */
+.accordion-button {
+    color: black;
+    background-color: var(--acc);
 }
-.numbers{
-  margin: 25px;
-  width: 350px;
-  height: 400px;
+
+/*Freccia verso l'alto */
+.accordion-button:not(.collapsed)::after {
+    background-image: url('../img/chevron-up-solid.svg');
+    transform: rotateZ(0deg);
 }
-h2{
-    font-size: 4rem;
+
+/* Accordion APERTA */
+.accordion-button:not(.collapsed) {
     color: var(--acc);
-    font-weight: bold;
-
+    background-color: var(--main)
 }
-#firstnumber, #secondnumber, #thirdnumber{
-    background-color: #f90;
+
+/*freccia versdo il basso */
+.accordion-button::after {
+    background-image: url('../img/chevron-down-solid.svg');
+    transform: rotateZ(360deg);
+}
+.riproduci{
+    background-color: var(--main);
+    color: black;
+}
+.riproduci:hover{
+    background-color: black;
+    color: var(--main);
 }
