@@ -35,12 +35,10 @@ fetch('../obj/musica.json')
       let div=document.createElement('div');
       div.classList.add('form-check');
       div.innerHTML=` 
-        <div class="form-check">
           <input class="form-check-input" type="radio" name="genere" id="${genere}">
             <label class="form-check-label" for=${genere}>
         ${genere} (${count})
         </label>
-      </div>
       `;
       radioGenere.appendChild(div);
     })
@@ -73,12 +71,10 @@ fetch('../obj/musica.json')
       let div=document.createElement('div');
       div.classList.add('form-check');
       div.innerHTML=` 
-        <div class="form-check">
           <input class="form-check-input" type="radio" name="artista" id="${artista}">
             <label class="form-check-label" for=${artista}>
         ${artista} (${count})
         </label>
-      </div>
       `;
       radioArtista.appendChild(div);
     })
@@ -111,12 +107,10 @@ fetch('../obj/musica.json')
       let div=document.createElement('div');
       div.classList.add('form-check');
       div.innerHTML=` 
-        <div class="form-check">
           <input class="form-check-input" type="radio" name="anno" id="${anno}">
             <label class="form-check-label" for=${anno}>
         ${anno} (${count})
         </label>
-      </div>
       `;
       radioAnno.appendChild(div);
     })
