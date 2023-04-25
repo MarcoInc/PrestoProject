@@ -12,7 +12,7 @@
     font-family: 'Inter Tight', sans-serif;
 
 }
-span,h1,h2,h3,h4,h5,h6{
+span,p,h1,h2,h3,h4,h5,h6{
     font-family: 'Orbitron', sans-serif;
 }
 h1{
@@ -53,11 +53,11 @@ transform: scale(1.1);
 /**************/
 
 /*logo*/
-.hub{
+/* .hub{
     color: var(--sec);
     background-color: var(--main);
     border-radius: 10%;
-}
+} */
 .Groove{
     color: var(--primary);
 
@@ -98,4 +98,8 @@ h2{
 }
 #firstnumber, #secondnumber, #thirdnumber{
     background-color: #f90;
+}
+.space{
+    height: 50rem;
+    
 }
