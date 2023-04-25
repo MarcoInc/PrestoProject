@@ -28,7 +28,7 @@ span{
 /*  */
 .navbar-custom{
     position: fixed;
-    top: 1%;
+    top: 0%;
     width: 100%;
     background-color: var(--blackTransp);
     backdrop-filter: blur(10px);
@@ -82,7 +82,7 @@ body{
     width: 98vw;
     background-size: cover;
     background-repeat:no-repeat;
-    border: 0%;
+    /* border: 0%; */
 
 }
 .numbers{
@@ -98,8 +98,4 @@ h2{
 }
 #firstnumber, #secondnumber, #thirdnumber{
     background-color: #f90;
-}
-.stats{
-    text-align: center;
-    
 }

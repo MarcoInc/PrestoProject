@@ -58,7 +58,7 @@
               </ul>
             </li>
             <li class="nav-item ">
-              <a class="nav-link link-light" href="#">Catalogo</a>
+              <a class="nav-link link-light" href="./resources/views/musiche.html">Catalogo</a>
             </li>
             <li class="nav-item ">
               <a class="nav-link link-light" href="#">info</a>
@@ -72,7 +72,7 @@
 <div class="container">
   <div class="mt-5 pt-5 row ">
     <div class="col-12 text-center mt-xl-3  ">
-<h1>Groove<span>Hub.</span></h1>
+<h1>Groove<span class="hub">Hub.</span></h1>
       </div>
     </div>
   </div>
@@ -80,44 +80,33 @@
 </div>
 
 <!-- Statistiche JS  -->
-<div class="container-fluid d-flex justify-content-center ">
-  <div class="row ">
-    <div class="col-12 d-flex justify-content-between backgroundstats">
-      <div class="col-4">
+<div class="container-fluid  ">
+  <div class="row">
+    <div class="col-3 d-sm-flex  backgroundstats text-center">
+      <div class="col align-self-center">  <!--  total user -->
+        
         <div>
-          <div class="numbers d-flex justify-content-center align-items-center flex-column">
-            <div class="col-12 stats">
+          <div class="numbers d-flex justify-content-center align-items-center flex-column ">
               <h3 class="text-light me-2">Total users</h3>
-            </div>
-            <div class="col-12 stats">
               <h2><span class="text-black rounded-3" id="firstnumber"></span></span></h2> 
-            </div>
           </div>
         </div>
       </div>
 
-      <div class="col-4">
+      <div class="col align-self-center p-0"><!-- total downloads  -->
         <div>
-          <div class="numbers d-flex justify-content-center align-items-center flex-column stats">
-            <div class="col-12 stats">
+          <div class="numbers d-flex justify-content-center align-items-center flex-column ">
               <h3 class="text-light me-2">Total downloads</h3>
-            </div>
-            <div class="col-12 stats">
-              <h2 class="stats"><span class="text-black rounded-3" id="secondnumber"></span></h2> 
-            </div>
+              <h2 class=""><span class="text-black rounded-3" id="secondnumber"></span></h2> 
           </div>
         </div>
       </div>
 
-      <div class="col-4">
+      <div class="col align-self-center"><!-- total tracks -->
         <div>
           <div class="numbers d-flex justify-content-center align-items-center flex-column">
-            <div class="col-12 stats">
               <h3 class="text-light me-2">Total tracks</h3>
-            </div>
-            <div class="col-12 stats">
-              <h2> <span class="text-black rounded-3" id="thirdnumber"></span></h2> 
-            </div>
+              <h2> <span class="text-black rounded-3" id="thirdnumber"></span></h2>
           </div>
         </div>
       </div>
@@ -128,7 +117,7 @@
 </div>
 
  <!-- carousel -->
-  <div class="container mt-5 mb-5">
+  <div class="container-fluid">
     <div class="row d-flex justify-content-center">
       <div class="col-12">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
@@ -138,7 +127,7 @@
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
           </div>
-          <div class="carousel-inner shadowImg mt-4 ">
+          <div class="carousel-inner shadowImg  ">
             <div class="carousel-item active">
               <div>
                 <img src="resources/img/cover-08.jpg" class="d-block w-100" alt="...">
