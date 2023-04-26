@@ -79,7 +79,7 @@ body{
     /* background-image: url(/resources/img/cover\ 25_sfondo.jpg); */
     background: linear-gradient(rgb(0, 0, 0), rgba(10, 10, 10, 0.336), rgb(0, 0, 0)), url(/resources/img/cover-28_sfondo.jpg);
     /* height: 70vh; */
-    width: 98vw;
+    width: 100vw;
     background-size: cover;
     background-repeat:no-repeat;
     /* border: 0%; */
@@ -101,4 +101,12 @@ h2{
 }
 .space{
     height: 90rem;
+}
+/* video */
+#background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: relative;
+  z-index: -1;
 }

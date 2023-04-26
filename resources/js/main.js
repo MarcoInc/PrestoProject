@@ -38,4 +38,3 @@ let observer = new IntersectionObserver ((entries) => {
 })
 observer.observe(firstnumber)
 
-
