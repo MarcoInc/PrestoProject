@@ -163,18 +163,19 @@ function filterByGenere(genre) {
     createCards(filtered);
   }
 
-  radioGenreInput.forEach(radioButton => {
-      radioButton.addEventListener('click', () => {
-          // console.log(radioButton.id);
-          let genereSelected = radioButton.id;
-          // Selezionato Tutte le Categorie
-          if (genereSelected == 'AllGenres') {
-              // Invocare la funzione createCards
-              createCards(data);
-          } else {
-            filterByGenere(genereSelected);
-          }
-      })
+radioGenreInput.forEach(radioButton => {
+    radioButton.addEventListener('click', () => {
+        // console.log(radioButton.id);
+        let genereSelected = radioButton.id;
+        // Selezionato Tutte le Categorie
+        if (genereSelected == 'AllGenres') {
+            // Invocare la funzione createCards
+            createCards(data);
+        } 
+        else {
+          filterByGenere(genereSelected);
+        }
+    })
   })
 
   //--------------FILTRO ARTISTA------------------
@@ -192,11 +193,12 @@ function filterByArtista(artist) {
           if (artistSelected == 'AllArtists') {
               // Invocare la funzione createCards 
               createCards(data);
-          } else {
-            filterByArtista(artistSelected);
+            } else {
+              filterByArtista(artistSelected);
           }
       })
   })
+
 
     //--------------FILTRO ANNO------------------
 let radioYearInput = document.querySelectorAll('.anno');
