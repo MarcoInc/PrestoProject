@@ -66,7 +66,7 @@
       <div class="col-md-2 col-12"> 
         <h5 class="text-white">Filtra per:</h5>
 
-        <!-- FILTRO CATEGORIE -->
+        <!-- FILTRO GENERE -->
         <div class="accordion mb-3" id="accordionExample">
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
@@ -80,7 +80,7 @@
                 
                 <!--Tutti i generi -->
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="genere" id="AllGenre" >
+                  <input class="form-check-input" type="radio" name="genere" id="AllGenres" >
                     <label class="form-check-label" for="All">Tutti i generi</label>
                 </div>
 
@@ -102,7 +102,7 @@
 
                  <!--Tutti gli artisti -->
                  <div class="form-check">
-                  <input class="form-check-input" type="radio" name="artista" id="AllArtist" >
+                  <input class="form-check-input" type="radio" name="artista" id="AllArtists" >
                     <label class="form-check-label" for="All">Tutti gli artisti</label>
                 </div>
 
@@ -142,15 +142,16 @@
               </button>
             </h2> 
             <div id="prezzo" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
+              <div class="accordion-body mb-0 pb-0">
 
-                <input type="range" class="form-range" min="0" max="5" id="customRange2">
-                <p class="ms-4 ">0</p>
-
-                <p class="me-4">2</p>
+                <!-- range conterrà il valore massimo tra tutti i prezzi possibili -->
+                <input id="inputRange" type="range" class="form-range " min="0" max="" value="0" step="0.01" >
 
               </div>
               <div class="d-flex justify-content-between" id="max-min">
+                <p class="ms-4 prices">0€</p>
+                <p class="prices" id="valueSelected"></p>
+                <p class="me-4 prices" id="maxValue"></p>
               </div>
             </div>
           </div>    
@@ -162,40 +163,32 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cerca" aria-expanded="true" aria-controls="collapseOne">
+
                 Per nome
               </button>
             </h2>
             <div id="cerca" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
               <div class="accordion-body">
-                
+                <input id="searchWord" type="text" class="form-control" placeholder="Titolo brano" aria-label="Username" aria-describedby="basic-addon1">
+
               </div>
             </div>
           </div>    
         </div>  
       </div>
         <!-- CARDS ANNUNCI -->
-      <div class="col-md-10 col-12">
-        <div class="card w-md-0 d-none d-md-block" style="width: 18rem;">
-          <img src="/resources/img/cover-13.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Titolo</h5>
-            <p class="card-text">Artista</p>
-            <p class="card-title">Anno</p>
-            <p class="card-title">Prezzo</p>
-            <a href="#" class="btn riproduci">play</a>
-          </div>
-        </div>
+      <div class="col-md-10 col-12 d-flex flex-wrap " id="containerCards">
 
-        <div class="card w-md-0 d-block d-md-none " style="width: 18rem;">
-          <img src="/resources/img/cover-13.jpg" class="card-img-top " alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Titolo</h5>
-            <p class="card-text">Artista</p>
-            <p class="card-title">Anno</p>
-            <p class="card-title">Prezzo</p>
-            <a href="#" class="btn riproduci">play</a>
-          </div>
+        
+       
+        
+                     
+
         </div>
+        
+          
+        </div>
+        
       </div>
 
     </div>

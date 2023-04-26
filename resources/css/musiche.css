@@ -79,3 +79,7 @@ body{
     background-color: black;
     color: var(--main);
 }
+
+.prices{
+    font-size: 14px;
+}
