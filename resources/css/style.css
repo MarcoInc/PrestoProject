@@ -53,11 +53,14 @@ transform: scale(1.1);
 /**************/
 
 /*logo*/
-/* .hub{
+.hub{
     color: var(--sec);
     background-color: var(--main);
     border-radius: 10%;
-} */
+}
+.bg-black{
+    border-radius: 10%;
+}
 .Groove{
     color: var(--primary);
 
@@ -102,11 +105,4 @@ h2{
 .space{
     height: 90rem;
 }
-/* video */
-#background-video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  position: relative;
-  z-index: -1;
-}
+
