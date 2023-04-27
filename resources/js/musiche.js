@@ -226,11 +226,20 @@ createCards(data);
     let resultGenere=filterByGenere(data);
     let resultArtista=filterByArtista(resultGenere);
     let resultAnno=filterByAnno(resultArtista);
-    console.log(resultAnno);
-
+    //console.log(resultAnno);
     let resultPrezzo=filterByPrice(resultAnno);
     let resultParola=filterByWord(resultPrezzo);
+    // Se ci sono dei risultati
 
+    let messaggio = document.querySelector('#messaggio');
+    
+    console.log(messaggio);
+    if (resultParola.length > 0) {
+      messaggio.classList.add('d-none'); // Nascondere il messaggio 
+    } 
+    else { // NON ci sono annunci
+      messaggio.classList.remove('d-none'); // Mostrare il messaggio
+    }
     createCards(resultParola);
   }
 
@@ -253,6 +262,15 @@ createCards(data);
   })
 
 })
+
+//let buttonReset=?
+
+
+
+
+
+
+
 
 
 
