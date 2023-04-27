@@ -8,6 +8,7 @@ fetch('../obj/musica.json')
   let radioArtista=document.querySelector('#radioArtista');
   let radioAnno=document.querySelector('#radioAnno');
 
+  //-----------------RADIO BUTTON--------------------//
   //genera radio button con generi univoci
   function setGenere(){
     let generi=[]; //generi univoci
@@ -116,7 +117,7 @@ fetch('../obj/musica.json')
   }
   setAnno(); //eseguo la funzione precedente
 
-  //crea le cards
+  //-----------CARD GENERATOR---------------//
   let containerCards=document.querySelector('#containerCards');
   function createCards(array) {
     // Ripulire il contenuto della sezione
@@ -142,7 +143,7 @@ fetch('../obj/musica.json')
 // Invocare la funzione createCards per creare gli Annunci
 createCards(data);
 
-
+//------------RANGE MANAGER-------------//
   let inputRange=document.querySelector('#inputRange'); //slider range
   let maxValue=document.querySelector('#maxValue'); //valore max
   //trova il prezzo maggiore
@@ -156,7 +157,7 @@ createCards(data);
   }
   rangeMax();
 
-//--------------FILTRO GENERE------------------
+//--------------FILTRO GENERE------------------//
 let radioGenreInput = document.querySelectorAll('.genere');
 function filterByGenere(genre) {
     let filtered = data.filter(musica => musica.genre == genre);
@@ -178,7 +179,7 @@ radioGenreInput.forEach(radioButton => {
     })
   })
 
-  //--------------FILTRO ARTISTA------------------
+  //--------------FILTRO ARTISTA------------------//
 let radioArtistInput = document.querySelectorAll('.artista');
 function filterByArtista(artist) {
     let filtered = data.filter(musica => musica.artist == artist);
@@ -200,7 +201,7 @@ function filterByArtista(artist) {
   })
 
 
-    //--------------FILTRO ANNO------------------
+    //--------------FILTRO ANNO------------------//
 let radioYearInput = document.querySelectorAll('.anno');
 function filterByAnno(year) {
     let filtered = data.filter(musica => musica.year == year);
@@ -221,8 +222,7 @@ function filterByAnno(year) {
       })
   })
 
-
-  //--------------------FILTRO PREZZO----------------
+    //--------------------FILTRO PREZZO----------------//
 //filtra per prezzo
   function filterByPrice(number) {
     let filtered = data.filter(annuncio => Number(annuncio.price) <= Number(number));
@@ -242,7 +242,7 @@ function filterByAnno(year) {
   let searchWord = document.querySelector('#searchWord');
 
 
-  //--------------FILTRO FORM------------------------
+  //--------------FILTRO FORM------------------------//
   //aggiorna il valore del form ad ogni input
   searchWord.addEventListener('input', () => {
       //console.log( searchWord.value );
