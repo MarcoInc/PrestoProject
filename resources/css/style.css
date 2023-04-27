@@ -54,10 +54,9 @@ transform: scale(1.1);
 
 /*logo*/
 .hub{
-    color: var(--acc);
-
+    color: var(--main);
     border-radius: 10%;
-    text-shadow: -1px -1px 0 var(--main), 1px -1px 0 var(--main), -1px 1px 0 var(--main), 1px 1px 0 var(--main);
+    text-shadow: -3px -3px 0 var(--sec), 3px -3px 0 var(--sec), -3px 3px 0 var(--sec), 3px 3px 0 var(--sec);
 
 }
 .textBorder{

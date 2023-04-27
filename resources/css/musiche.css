@@ -10,7 +10,9 @@
 *{
     font-family:  Helvetica, sans-serif
 }
-
+span,h1,h2,h3,h4,h5,h6{
+    font-family: 'Orbitron', sans-serif;
+}
 .navbar-custom{
     position: fixed;
     top: 1%;
@@ -28,8 +30,8 @@
 
 /*logo*/
 .hub{
-    color: var(--sec);
-    background-color: var(--main);
+    color: var(--main);
+
     border-radius: 10%;
 }
 .Groove{
