@@ -57,7 +57,7 @@ transform: scale(1.1);
     color: var(--acc);
 
     border-radius: 10%;
-    text-shadow: -1px -1px 0 var(--sec), 1px -1px 0 var(--sec), -1px 1px 0 var(--sec), 1px 1px 0 var(--sec);
+    text-shadow: -1px -1px 0 var(--main), 1px -1px 0 var(--main), -1px 1px 0 var(--main), 1px 1px 0 var(--main);
 
 }
 .textBorder{
@@ -71,7 +71,12 @@ transform: scale(1.1);
     background-color: #f90;
 }
 /*****/
+.hub2{
+    color: var(--main);
+    border-radius: 10%;
+    text-shadow: -1px -1px 0 var(--sec), 1px -1px 0 var(--sec), -1px 1px 0 var(--sec), 1px 1px 0 var(--sec);
 
+}
 
 body{
     background-color: var(--sec);
@@ -108,3 +113,19 @@ h2{
     height: 90rem;
 }
 
+.iconFoot{
+    color: var(--main);
+}
+
+.text-red{
+    color: red;
+}
+.text-blue{
+    color:  #0165E1;
+}
+.text-twitter{
+    color: #1DA1F2;
+}
+.help-section a:link,a:visited {
+    color: var(--main);
+  }
