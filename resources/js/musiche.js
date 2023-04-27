@@ -161,17 +161,17 @@ createCards(data);
   //FILTRO GLOBALE  
   //--------------FILTRO GENERE------------------//
   let radioGenreInput = document.querySelectorAll('.genere'); //prendo tutti radio genere
-
   function filterByGenere(array) {
       let arrayFromNode=Array.from(radioGenreInput);  //ottengo un array di radio genere
       let checked=arrayFromNode.find(element=> element.checked==true); //seleziono solo quelli checked
       let genereSelected = checked.id; //contiene la categoria selezionata <- id
-
+      //console.log(genereSelected);
       if (genereSelected == 'AllGenres') {
         return array;
       } 
       else {
-        let filtered = data.filter(musica => musica.genre == genre);
+        let filtered = array.filter(musica => musica.genre == genereSelected);
+        //console.log(filtered);
         return filtered;
       }
   }
@@ -186,44 +186,48 @@ createCards(data);
       return array;
     } 
     else {
-      let filtered = array.filter(musica => musica.artist == artist);
+      let filtered = array.filter(musica => musica.artist == artistaSelected);
+      //console.log(filtered);
       return filtered;
     }
   }
 
       //--------------FILTRO ANNO------------------//
-  let radioYearInput = document.querySelectorAll('.anni'); //prendo tutti radio anno
+  let radioYearInput = document.querySelectorAll('.anno'); //prendo tutti radio anno
   function filterByAnno(array) {
     let arrayFromNode=Array.from(radioYearInput);  //ottengo un array di radio genere
+
     let checked=arrayFromNode.find(element=> element.checked==true); //seleziono solo quelli checked
     let annoSelected = checked.id; //contiene l'anno selezionato <- id
     if (annoSelected == 'AllYears') {
       return array;
     } 
     else {
-      let filtered = array.filter(musica => musica.year == year);
+      let filtered = array.filter(musica => musica.year == annoSelected);
+      //console.log(filtered);
       return filtered;
     }
   }
 
   //--------------------FILTRO PREZZO----------------//
   function filterByPrice(array) {
-    let filtered = array.filter(element => Number(element.price) <= Number(number));
+    let filtered = array.filter(element => Number(element.price) <= Number(inputRange.value));
     return filtered;
   }
 
   //--------------FILTRO FORM------------------------//
   function filterByWord(array) {
-    let filtered =  array.filter(element => element.title.toLowerCase().includes(word.toLowerCase()));
+    let filtered =  array.filter(element => element.title.toLowerCase().includes(form.value.toLowerCase()));
     return filtered;
   }
 
 //--------------FILTRO GLOBALE-----------------//
   function globalFilter() {
     let resultGenere=filterByGenere(data);
-    console.log(resultGenere);
     let resultArtista=filterByArtista(resultGenere);
     let resultAnno=filterByAnno(resultArtista);
+    console.log(resultAnno);
+
     let resultPrezzo=filterByPrice(resultAnno);
     let resultParola=filterByWord(resultPrezzo);
 
