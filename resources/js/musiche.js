@@ -147,10 +147,7 @@ fetch('../obj/musica.json')
 }
 // Invocare la funzione createCards per creare gli Annunci
 createCards(data);
-// Pulsante che reinvoca la funzione createcards con data per "ripulire i filtri"!
-btnReset.onclick = function (){
-  createCards(data);
-    }
+
   
 
 //------------RANGE MANAGER-------------//
@@ -219,6 +216,7 @@ btnReset.onclick = function (){
     }
   }
 
+
   //--------------------FILTRO PREZZO----------------//
   function filterByPrice(array) {
     let filtered = array.filter(element => Number(element.price) <= Number(inputRange.value));
@@ -234,25 +232,44 @@ btnReset.onclick = function (){
 //--------------FILTRO GLOBALE-----------------//
   function globalFilter() {
     let resultGenere=filterByGenere(data);
+   
     let resultArtista=filterByArtista(resultGenere);
+ 
     let resultAnno=filterByAnno(resultArtista);
-    //console.log(resultAnno);
+   
     let resultPrezzo=filterByPrice(resultAnno);
+
     let resultParola=filterByWord(resultPrezzo);
-    // Se ci sono dei risultati
-//  se mancano risultati
-    let messaggio = document.querySelector('#messaggio');
-    console.log(messaggio);
-    if (resultParola.length > 0) {}  // se trova qualcosa non fa niente 
-    else { // NESSUN ANNUNCIO DISPONIBILE
+   
+    //  Dopo aver filtrato deve creare le carte con la funzione create cards
+    if (resultParola.length > 0) {
+      createCards(resultParola);
+    } 
+    // Se non trova niente 
+    else { 
       containerCards.innerHTML = '';
       let div = document.createElement('div');
-
       div.classList.add(`alert`, `alert-primary`,`col-12`,`align-self-center`,`d-flex`,`justify-content-center`);
       div.innerHTML = `ERROR 404 NIGGA NOT FOUND`;
       containerCards.appendChild(div);
     }
   }
+  // Pulsante che reinvoca la funzione createcards con data per "ripulire i filtri"!
+btnReset.onclick = function (){
+  
+  document.getElementById("AllGenres").click();
+  document.getElementById("AllArtists").click();
+  document.getElementById("AllYears").click();
+  //Per cambiare il valore nella scrollbar bisogna riprendere il valore Max value togliere il simbolo dell'euro se no si bagga
+  let Valmax = document.getElementById("maxValue").innerHTML;
+  let CleanValmax = Valmax.replace(/€/g, "");
+  document.getElementById("inputRange").value = CleanValmax;
+  // Pulire il valore dentro searchword
+  document.getElementById("searchWord").value = "";
+  //  ricrea le cards attraverso i valori data
+  createCards(data);
+
+    }
 
   let allRadio=document.querySelectorAll('.form-check-input');
   let range=document.querySelector('#inputRange');
