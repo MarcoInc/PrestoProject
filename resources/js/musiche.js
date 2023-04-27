@@ -7,6 +7,11 @@ fetch('../obj/musica.json')
   let radioGenere=document.querySelector('#radioGenere');
   let radioArtista=document.querySelector('#radioArtista');
   let radioAnno=document.querySelector('#radioAnno');
+  let containerCards=document.querySelector('#containerCards');
+  let btnReset = document.querySelector(`.btn-reset`);
+
+
+
 
   //-----------------RADIO BUTTON--------------------//
   //genera radio button con generi univoci
@@ -118,7 +123,7 @@ fetch('../obj/musica.json')
   setAnno(); //eseguo la funzione precedente
 
   //-----------CARD GENERATOR---------------//
-  let containerCards=document.querySelector('#containerCards');
+
   function createCards(array) {
     // Ripulire il contenuto della sezione
     containerCards.innerHTML = '';
@@ -142,6 +147,11 @@ fetch('../obj/musica.json')
 }
 // Invocare la funzione createCards per creare gli Annunci
 createCards(data);
+// Pulsante che reinvoca la funzione createcards con data per "ripulire i filtri"!
+btnReset.onclick = function (){
+  createCards(data);
+    }
+  
 
 //------------RANGE MANAGER-------------//
   let inputRange=document.querySelector('#inputRange'); //slider range
@@ -230,17 +240,18 @@ createCards(data);
     let resultPrezzo=filterByPrice(resultAnno);
     let resultParola=filterByWord(resultPrezzo);
     // Se ci sono dei risultati
-
+//  se mancano risultati
     let messaggio = document.querySelector('#messaggio');
-    
     console.log(messaggio);
-    if (resultParola.length > 0) {
-      messaggio.classList.add('d-none'); // Nascondere il messaggio 
-    } 
-    else { // NON ci sono annunci
-      messaggio.classList.remove('d-none'); // Mostrare il messaggio
+    if (resultParola.length > 0) {}  // se trova qualcosa non fa niente 
+    else { // NESSUN ANNUNCIO DISPONIBILE
+      containerCards.innerHTML = '';
+      let div = document.createElement('div');
+
+      div.classList.add(`alert`, `alert-primary`,`col-12`,`align-self-center`,`d-flex`,`justify-content-center`);
+      div.innerHTML = `ERROR 404 NIGGA NOT FOUND`;
+      containerCards.appendChild(div);
     }
-    createCards(resultParola);
   }
 
   let allRadio=document.querySelectorAll('.form-check-input');

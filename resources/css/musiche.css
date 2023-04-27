@@ -86,3 +86,8 @@ body{
 .annunciCard{
     height: 25vw;
 }
+
+.btn-reset{
+    color: var(--lightO);
+    background-color: var(--main);
+}
