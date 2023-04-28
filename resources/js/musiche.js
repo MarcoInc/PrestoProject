@@ -10,6 +10,9 @@ fetch('../obj/musica.json')
   let containerCards=document.querySelector('#containerCards');
   let btnReset = document.querySelector(`.btn-reset`);
 
+  let found=document.querySelector('.found');
+
+
 
 
 
@@ -243,6 +246,10 @@ createCards(data);
    
     //  Dopo aver filtrato deve creare le carte con la funzione create cards
     if (resultParola.length > 0) {
+      found.innerHTML = '';
+      let div = document.createElement('div');
+      div.innerHTML = `Trovati ${resultParola.length} elementi`;
+      found.appendChild(div);
       createCards(resultParola);
     } 
     // Se non trova niente 
@@ -288,8 +295,10 @@ btnReset.onclick = function (){
   form.addEventListener('input', () => {
     globalFilter();
   })
+  globalFilter();
 
 })
+
 
 //let buttonReset=?
 
