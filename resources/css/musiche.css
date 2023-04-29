@@ -74,6 +74,8 @@ body{
     background-image: url('../img/chevron-up-solid.svg');
     transform: rotateZ(0deg);
 }
+
+
 .riproduci{
     background-color: var(--main);
     color: black;
