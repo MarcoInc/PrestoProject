@@ -74,16 +74,31 @@
         <p class="found d-flex alert alert-primary text-center"></p>
 
         <h5 class="text-white">Filtra per:</h5>
+        <!-- FILTRO CERCA -->
+        <div class="accordion mb-3" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#cerca" aria-expanded="true" aria-controls="collapseOne">
+                Per nome
+              </button>
+            </h2>
+            <div id="cerca" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#ciao">
+              <div class="accordion-body">
+                <input id="searchWord" type="text" class="form-control" placeholder="Titolo brano" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+            </div>
+          </div>    
+        </div>  
 
         <!-- FILTRO GENERE -->
         <div class="accordion mb-3" id="accordionExample">
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#genre" aria-expanded="true" aria-controls="collapseOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#genre" aria-expanded="true" aria-controls="collapseOne">
                 Per genere
               </button>
             </h2>
-            <div id="genre" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div id="genre" class="accordion-collapse collapse" aria-labelledby="headingOne" >
               <!-- contenitore radio genere -->
               <div class="accordion-body" id="radioGenere"> 
                 
@@ -101,11 +116,11 @@
         <div class="accordion mb-3" id="accordionExample">
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#artist" aria-expanded="true" aria-controls="collapseOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#artist" aria-expanded="true" aria-controls="collapseOne">
                 Per artista
               </button>
             </h2> 
-            <div id="artist" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div id="artist" class="accordion-collapse collapse " aria-labelledby="headingOne" >
               <div class="accordion-body" id="radioArtista">
 
                  <!--Tutti gli artisti -->
@@ -123,11 +138,11 @@
         <div class="accordion mb-3" id="accordionExample">
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#year" aria-expanded="true" aria-controls="collapseOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#year" aria-expanded="true" aria-controls="collapseOne">
                 Per anno
               </button>
             </h2>
-            <div id="year" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div id="year" class="accordion-collapse collapse " aria-labelledby="headingOne" >
               <div class="accordion-body" id="radioAnno">
 
                 <!--Tutti gli anni -->
@@ -145,7 +160,7 @@
         <div class="accordion mb-3" id="accordionExample">
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#prezzo" aria-expanded="true" aria-controls="collapseOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#prezzo" aria-expanded="true" aria-controls="collapseOne">
                 Per prezzo
               </button>
             </h2> 
@@ -166,23 +181,7 @@
         </div>
 
          
-        <!-- FILTRO CERCA -->
-        <div class="accordion mb-3" id="accordionExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cerca" aria-expanded="true" aria-controls="collapseOne">
-
-                Per nome
-              </button>
-            </h2>
-            <div id="cerca" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <input id="searchWord" type="text" class="form-control" placeholder="Titolo brano" aria-label="Username" aria-describedby="basic-addon1">
-
-              </div>
-            </div>
-          </div>    
-        </div>  
+        
         <div class="col-12 d-flex justify-content-center">
           <button class="btn-reset"> Resetta i campi</button>
         </div>

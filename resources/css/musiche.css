@@ -50,6 +50,19 @@ body{
 
 
 /*ACCORDION*/
+
+
+/* Accordion APERTA */
+.accordion-button:not(.collapsed){
+    color: var(--acc);
+    background-color: var(--main)
+}
+
+/*freccia versdo il basso */
+.accordion-button::after {
+    background-image: url('../img/chevron-down-solid.svg');
+    transform: rotateZ(360deg);
+}
 /* Accordion CHIUSA */
 .accordion-button {
     color: black;
@@ -60,18 +73,6 @@ body{
 .accordion-button:not(.collapsed)::after {
     background-image: url('../img/chevron-up-solid.svg');
     transform: rotateZ(0deg);
-}
-
-/* Accordion APERTA */
-.accordion-button:not(.collapsed) {
-    color: var(--acc);
-    background-color: var(--main)
-}
-
-/*freccia versdo il basso */
-.accordion-button::after {
-    background-image: url('../img/chevron-down-solid.svg');
-    transform: rotateZ(360deg);
 }
 .riproduci{
     background-color: var(--main);
@@ -93,3 +94,8 @@ body{
     color: var(--lightO);
     background-color: var(--main);
 }
+.found{
+    color:black;
+    background-color: var(--main)
+}
+

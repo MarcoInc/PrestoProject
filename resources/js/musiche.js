@@ -245,19 +245,25 @@ createCards(data);
     let resultParola=filterByWord(resultPrezzo);
    
     //  Dopo aver filtrato deve creare le carte con la funzione create cards
+
     if (resultParola.length > 0) {
-      found.innerHTML = '';
       let div = document.createElement('div');
+      found.innerHTML = '';
       div.innerHTML = `Trovati ${resultParola.length} elementi`;
       found.appendChild(div);
       createCards(resultParola);
     } 
     // Se non trova niente 
     else { 
+      let div1 = document.createElement('div');
+      found.innerHTML = '';
+      div1.innerHTML = `Trovati ${resultParola.length} elementi`;
+      found.appendChild(div1);
+
       containerCards.innerHTML = '';
       let div = document.createElement('div');
-      div.classList.add(`alert`, `alert-primary`,`col-12`,`align-self-center`,`d-flex`,`justify-content-center`);
-      div.innerHTML = `ERROR 404 NIGGA NOT FOUND`;
+      div.classList.add(`col-12`,`align-self-center`,`d-flex`,`justify-content-center`, 'found', 'rounded-1');
+      div.innerHTML = `Non ho trovato nessun brano`;
       containerCards.appendChild(div);
     }
   }
