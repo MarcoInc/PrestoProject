@@ -306,124 +306,124 @@ btnReset.onclick = function (){
 
 //--------------AUDIO MANAGER------------------------------------//
 
-
+let audio=null;
 //fix map from 100 to 60 range
-function mapRangeValue(x, in_min, in_max, out_min, out_max) {
-    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-}
-
-//fix seconds text
-function fixSeconds(num) {
-  let decimal = num % 1; //parte intera 0 e parte decimale da convertire -> 0.762123
-  let decimal60 = mapRangeValue(decimal, 0, 0.99999, 1, 60); //mappa nel range desiderato -da 0.50 -> 0.30
-  let seconds = Math.floor(decimal60).toString().substring(0, 2); //estraggo la sola parte decimale formata da due cifre -> da 0.25 -> 25
-  if (seconds.length < 2) { //se le cifre estratte sono 2 -> 1 , 2 , 3 ....9
-    seconds = "0" + seconds; //antepone uno 0 -> da 2 a 02
+  function mapRangeValue(x, in_min, in_max, out_min, out_max) {
+      return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
   }
-  return seconds;
-}
 
-function playMusic(musica){
+  //fix seconds text
+  function fixSeconds(num) {
+    let decimal = num % 1; //parte intera 0 e parte decimale da convertire -> 0.762123
+    let decimal60 = mapRangeValue(decimal, 0, 0.99999, 1, 60); //mappa nel range desiderato -da 0.50 -> 0.30
+    let seconds = Math.floor(decimal60).toString().substring(0, 2); //estraggo la sola parte decimale formata da due cifre -> da 0.25 -> 25
+    if (seconds.length < 2) { //se le cifre estratte sono 2 -> 1 , 2 , 3 ....9
+      seconds = "0" + seconds; //antepone uno 0 -> da 2 a 02
+    }
+    return seconds;
+  }
   let nav=document.createElement('nav');
-  nav.classList.add('navbar', 'navbar-expand-lg', 'navbar-bottom');
-  nav.innerHTML=`
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse row" id="navbarNav">
-      <ul class="navbar-nav">
+  function playMusic(musica){
+    nav.innerHTML=``;
+    nav.classList.add('navbar', 'navbar-expand-lg', 'navbar-bottom');
+    nav.innerHTML=`
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse row" id="navbarNav">
+        <ul class="navbar-nav">
 
-        <li class="nav-item d-flex justify-content-end col-3">
-          <h4 class="me-5 mt-3">${musica.artist}</h4>
-          <h4 class="fw-bold mt-3">${musica.title}</h4>
-        </li>
+          <li class="nav-item d-flex justify-content-end col-3">
+            <h4 class="me-5 mt-3">${musica.artist}</h4>
+            <h4 class="fw-bold mt-3">${musica.title}</h4>
+          </li>
 
-        <li class="nav-item d-flex justify-content-center col-1" >
-          <button id="playPause" class="btn mt-1"> <h2 class="bi bi-pause-circle" style="color:black">  </h2></button>
-        </li>
+          <li class="nav-item d-flex justify-content-center col-1" >
+            <button id="playPause" class="btn mt-1"> <h2 class="bi bi-pause-circle" style="color:black">  </h2></button>
+          </li>
 
-        <li class="nav-item col-8 d-flex justify-content-start align-items-center">
-          <p id="start" class="mx-2 bg-black text-light mt-3 rounded-3 px-2">0:00</p>
-          <div class="progress-bottom">
-            <input id="progressAudio" type="range" class="form-range " min="0" max="" value="0" step="0.01" >
-          </div>
-          <p id="end" class="mx-2 bg-black text-light mt-3 rounded-3 px-2"></p>            
-        </li>
-      </ul>
-      <audio preload="metadata">
-            <source src="${musica.url}">
-        </audio>
+          <li class="nav-item col-8 d-flex justify-content-start align-items-center">
+            <p id="start" class="mx-2 bg-black text-light mt-3 rounded-3 px-2">0:00</p>
+            <div class="progress-bottom">
+              <input id="progressAudio" type="range" class="form-range " min="0" max="" value="0" step="0.01" >
+            </div>
+            <p id="end" class="mx-2 bg-black text-light mt-3 rounded-3 px-2"></p>            
+          </li>
+        </ul>
+        <audio preload="metadata">
+              <source src="${musica.url}">
+          </audio>
+      </div>
     </div>
-  </div>
-  `
-  player.appendChild(nav); 
-  let audio=document.querySelector('audio');
+    `
+    player.appendChild(nav); 
 
-  //PULSANTI
-      //sul player
-  let playPause=document.querySelector('#playPause');
+    audio=document.querySelector('audio');
 
-  audio.play();
+    //PULSANTI
+        //sul player
+    let playPause=document.querySelector('#playPause');
 
-
-  //PLAY
-  playPause.addEventListener('click' ,()=>{
-      if(audio.paused){
-          audio.play();
-          playPause.innerHTML = '<h2 class="bi bi-play-circle" style="color:black">';
-      }
-      else{
-          audio.pause();
-          playPause.innerHTML = '<h2 class="bi bi-pause-circle" style="color:black">';
-      }
-  }); 
-
-  //metto in ascolto l'oggetto audio tramite le sue metainformazioni
-  let end=document.querySelector("#end");
-  audio.addEventListener('loadedmetadata', ()=>{ 
-      end.innerHTML=`${Math.floor(audio.duration/60).toFixed(0)}:${fixSeconds(audio.duration/60)}` ;
-  })
-  //metto in ascolto l'audio riguardo il cambiamento del tempo del brano
-  let start=document.querySelector("#start");
-  audio.addEventListener('timeupdate', ()=>{ 
-  start.innerHTML=`${Math.floor(audio.currentTime/60).toFixed(0)}:${fixSeconds(audio.currentTime/60)}`;
-  
-  // Catturare la Progress Bar
-  let playerProgress=document.querySelector("#progressAudio");
-
-  // currentTime, startTime, endTime, startProgress, endProgress
-  playerProgress.value = `${mapRangeValue(audio.currentTime, 0, audio.duration, 0, 100)}%`;
-  })
-
-  playerProgress.addEventListener('input', ()=>{
-    audio.currentTime=`${mapRangeValue(playerProgress.value, 0, 100 , 0, audio.duration)}  `;
-  })
+    audio.play();
 
 
-
-}
- //catturo play nelle card
-  //funzione usata per estrarre l'id della musica dall'id del pulsante riproduci
- function extractNumber(str) {
-  const arr = str.split("-");
-  const numStr = arr.pop();
-  const num = numStr.match(/(\d+)/)[0];
-  return num;
-}
-
-let playCards=document.querySelectorAll(".riproduci");
-
-playCards.forEach(function(playCards) {
-  playCards.addEventListener("click", ()=> {
-    let musicID=extractNumber(playCards.id); //estraggo il numero id dall'id del bottone
-    let selected=data.find(element=>element.id==musicID); //trovo il primo id che cerco
-    playMusic(selected);
-  });
-
+    //PLAY
+   playPause.addEventListener('click', () => {
+  if (audio.paused) {
+    audio.play();
+    console.log("play");
+    playPause.innerHTML = '<h2 class="bi bi-pause-circle" style="color:black">';
+  } else {
+    audio.pause();
+    console.log("pause");
+    playPause.innerHTML = '<h2 class="bi bi-play-circle" style="color:black">';
+  }
+  playPause.blur(); // aggiungi questo per risolvere il problema di focus
 });
 
 
 
+    //metto in ascolto l'oggetto audio tramite le sue metainformazioni
+    let end=document.querySelector("#end");
+    let playerProgress=document.querySelector("#progressAudio");
 
+    audio.addEventListener('loadedmetadata', ()=>{ 
+        end.innerHTML=`${Math.floor(audio.duration/60).toFixed(0)}:${fixSeconds(audio.duration/60)}` ;
+    })
 
+    //metto in ascolto l'audio riguardo il cambiamento del tempo del brano
+    let start=document.querySelector("#start");
+    audio.addEventListener('timeupdate', ()=>{ 
+    start.innerHTML=`${Math.floor(audio.currentTime/60).toFixed(0)}:${fixSeconds(audio.currentTime/60)}`;
+
+    // currentTime, startTime, endTime, startProgress, endProgress
+    playerProgress.value = `${mapRangeValue(audio.currentTime, 0, audio.duration, 0, 100)}`;
+    console.log(`value ${playerProgress.value} - currentTime ${audio.currentTime}`);
+    })
+
+    playerProgress.addEventListener('input', ()=>{
+      audio.currentTime=`${mapRangeValue(playerProgress.value, 0, 100, 0, audio.duration)}`;
+
+    })
+  }
+ //catturo play nelle card
+  //funzione usata per estrarre l'id della musica dall'id del pulsante riproduci
+  function extractNumber(str) {
+    const arr = str.split("-");
+    const numStr = arr.pop();
+    const num = numStr.match(/(\d+)/)[0];
+    return num;
+  }
+
+  let playCards=document.querySelectorAll(".riproduci");
+
+  playCards.forEach(function(playCards) {
+    playCards.addEventListener("click", ()=> {
+      if(audio!=null)
+        audio.pause();
+      let musicID=extractNumber(playCards.id); //estraggo il numero id dall'id del bottone
+      let selected=data.find(element=>element.id==musicID); //trovo il primo id che cerco
+      playMusic(selected);
+    });
+  });
 })
 
 
