@@ -281,8 +281,8 @@ btnReset.onclick = function (){
   document.getElementById("searchWord").value = "";
   //  ricrea le cards attraverso i valori data
   createCards(data);
-
-    }
+  extractRiproduci();
+}
 
   let allRadio=document.querySelectorAll('.form-check-input');
   let range=document.querySelector('#inputRange');
@@ -300,6 +300,7 @@ btnReset.onclick = function (){
 
   form.addEventListener('input', () => {
     globalFilter();
+     extractRiproduci();
   })
   globalFilter();
 
@@ -365,19 +366,19 @@ let audio=null;
     audio.play();
 
 
-    //PLAY
-   playPause.addEventListener('click', () => {
-  if (audio.paused) {
-    audio.play();
-    console.log("play");
-    playPause.innerHTML = '<h2 class="bi bi-pause-circle" style="color:black">';
-  } else {
-    audio.pause();
-    console.log("pause");
-    playPause.innerHTML = '<h2 class="bi bi-play-circle" style="color:black">';
-  }
-  playPause.blur(); // aggiungi questo per risolvere il problema di focus
-});
+        //PLAY
+    playPause.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+      console.log("play");
+      playPause.innerHTML = '<h2 class="bi bi-pause-circle" style="color:black">';
+    } else {
+        audio.pause();
+        console.log("pause");
+        playPause.innerHTML = '<h2 class="bi bi-play-circle" style="color:black">';
+      }
+      playPause.blur(); // aggiungi questo per risolvere il problema di focus
+    });
 
 
 
@@ -404,7 +405,8 @@ let audio=null;
 
     })
   }
- //catturo play nelle card
+
+  //catturo play nelle card
   //funzione usata per estrarre l'id della musica dall'id del pulsante riproduci
   function extractNumber(str) {
     const arr = str.split("-");
@@ -412,18 +414,19 @@ let audio=null;
     const num = numStr.match(/(\d+)/)[0];
     return num;
   }
-
-  let playCards=document.querySelectorAll(".riproduci");
-
-  playCards.forEach(function(playCards) {
+  function extractRiproduci(){
+    let playCards=document.querySelectorAll(".riproduci");
+    playCards.forEach(function(playCards) {
     playCards.addEventListener("click", ()=> {
-      if(audio!=null)
-        audio.pause();
+    if(audio!=null)
+      audio.pause();
       let musicID=extractNumber(playCards.id); //estraggo il numero id dall'id del bottone
       let selected=data.find(element=>element.id==musicID); //trovo il primo id che cerco
       playMusic(selected);
     });
   });
+  }
+  extractRiproduci();
 })
 
 
